@@ -4,31 +4,31 @@ import {
   StyledContactListItem,
   StyledDeleteButton,
 } from './ContactList.styled';
+
+import { useEffect } from 'react';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import {
   selectContacts,
   selectError,
   selectFilteredContacts,
-  selectisLoading,
-} from 'redux/selectors';
-
-import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/operations';
+  selectIsLoading,
+} from 'redux/contacts/selectors';
+import { Loader } from 'components/Loader';
 
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const error = useSelector(selectError);
-  const isLoading = useSelector(selectisLoading);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
   const filteredContacts = useSelector(selectFilteredContacts);
-
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
     <>
-      {isLoading && <p>Loading contacts...</p>}
+      {isLoading && <Loader />}
       {error && <p>{error}</p>}
       {contacts && (
         <StyledContactList>

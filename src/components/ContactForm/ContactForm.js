@@ -9,8 +9,9 @@ import {
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { toast } from 'react-toastify';
 
 const schema = Yup.object().shape({
   name: Yup.string()
@@ -33,14 +34,14 @@ export const ContactForm = () => {
   const nameInputId = nanoid();
   const numberInputId = nanoid();
   const dispatch = useDispatch();
-  const { items } = useSelector(selectContacts);
+  const items = useSelector(selectContacts);
 
   const handleSubmit = (values, { resetForm }) => {
     const existingContact = items.find(
       contact => contact.name.toLowerCase() === values.name.toLowerCase()
     );
     if (existingContact) {
-      alert(`Contact with name "${values.name}" already exists.`);
+      toast(`Contact with name ${values.name} already exists!`);
       return;
     }
     dispatch(addContact(values));
