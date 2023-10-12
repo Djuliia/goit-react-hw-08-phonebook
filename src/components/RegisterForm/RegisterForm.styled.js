@@ -8,7 +8,6 @@ export const StyledForm = styled.form`
   align-items: center;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 40px;
   width: 320px;
 `;
 
@@ -40,5 +39,5 @@ export const StyledBtn = styled.button`
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 20%;
 `;
