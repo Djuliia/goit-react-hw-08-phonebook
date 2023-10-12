@@ -2,7 +2,6 @@ import { Container } from 'components/App/App.styled';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { GlobalStyle } from 'components/GlobalStyle';
 import { Loader } from 'components/Loader';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -27,7 +26,6 @@ const Contacts = () => {
       <Filter />
       {isLoading && !isError && <Loader />}
       <ContactList />
-      <GlobalStyle />
     </Container>
   );
 };

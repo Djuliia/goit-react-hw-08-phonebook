@@ -1,5 +1,3 @@
-import { GlobalStyle } from 'components/GlobalStyle';
-
 const Home = () => {
   return (
     <div
@@ -13,7 +11,6 @@ const Home = () => {
           📖
         </span>
       </h1>
-      <GlobalStyle />
     </div>
   );
 };
