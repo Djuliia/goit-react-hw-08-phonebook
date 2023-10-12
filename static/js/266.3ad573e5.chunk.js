@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[266],{1266:function(e,t,o){o.r(t);var a=o(184);t.default=function(){return(0,a.jsx)("div",{style:{textAlign:"center"},children:(0,a.jsxs)("h1",{style:{maxWidth:"600px",margin:"0 auto",paddingTop:"15%"},children:["Welcome to Phonebook, where you can save your contacts"," ",(0,a.jsx)("span",{role:"img","aria-label":"book icon",children:"\ud83d\udcd6"})]})})}}}]);
+//# sourceMappingURL=266.3ad573e5.chunk.js.map
