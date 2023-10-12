@@ -39,5 +39,5 @@ export const StyledBtn = styled.button`
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 20%;
+  padding-top: 10%;
 `;

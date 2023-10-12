@@ -22,9 +22,6 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   const filteredContacts = useSelector(selectFilteredContacts);
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (
     <>
