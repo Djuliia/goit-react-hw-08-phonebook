@@ -5,8 +5,7 @@ import {
   StyledDeleteButton,
 } from './ContactList.styled';
 
-import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import {
   selectContacts,
   selectError,
