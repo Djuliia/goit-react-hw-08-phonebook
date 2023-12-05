@@ -20,7 +20,7 @@ export const LoginForm = () => {
 
   return (
     <Wrapper>
-      <StyledForm onSubmit={handleSubmit} autoComplete="off">
+      <StyledForm onSubmit={handleSubmit}>
         <label>
           Email
           <StyledInput

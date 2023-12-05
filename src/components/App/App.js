@@ -9,6 +9,8 @@ import { PrivateRoute } from 'components/PrivateRoute';
 import { Layout } from 'components/Layout/Layout';
 import { Loader } from 'components/Loader';
 import { GlobalStyle } from 'components/GlobalStyle';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = lazy(() => import('../../pages/Home'));
 const RegisterPage = lazy(() => import('../../pages/Register'));
@@ -57,6 +59,7 @@ export const App = () => {
           <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
+      <ToastContainer />
       <GlobalStyle />
     </>
   );

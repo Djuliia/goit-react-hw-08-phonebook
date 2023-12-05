@@ -30,7 +30,7 @@ const handleFulfiledAdd = (state, { payload }) => {
 };
 
 const handleFulfiledDelete = (state, { payload }) => {
-  const index = state.items.findIndex(contact => contact.id === payload.id);
+  const index = state.items.findIndex(contact => contact._id === payload);
   state.items.splice(index, 1);
 };
 

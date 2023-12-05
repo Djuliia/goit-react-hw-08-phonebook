@@ -28,10 +28,10 @@ export const ContactList = () => {
       {error && <p>{error}</p>}
       {contacts && (
         <StyledContactList>
-          {filteredContacts.map(({ id, name, number }) => (
-            <StyledContactListItem key={id}>
+          {filteredContacts.map(({ _id, name, number }) => (
+            <StyledContactListItem key={_id}>
               {name}: {number}
-              <StyledDeleteButton onClick={() => dispatch(deleteContact(id))}>
+              <StyledDeleteButton onClick={() => dispatch(deleteContact(_id))}>
                 Delete
               </StyledDeleteButton>
             </StyledContactListItem>

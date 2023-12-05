@@ -1,7 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+axios.defaults.baseURL = 'http://localhost:8000';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -19,7 +21,11 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      if (error.response && error.response.status === 409) {
+        toast.error('User already exists!');
+      } else {
+        return thunkAPI.rejectWithValue(error.message);
+      }
     }
   }
 );
@@ -32,7 +38,11 @@ export const logIn = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      if (error.response && error.response.status === 401) {
+        toast.error('User is unauthorized!');
+      } else {
+        return thunkAPI.rejectWithValue(error.message);
+      }
     }
   }
 );
