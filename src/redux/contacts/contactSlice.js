@@ -61,8 +61,8 @@ const contactSlice = createSlice({
       .addMatcher(
         isAnyOf(
           fetchContacts.fulfilled,
-          addContact.pending,
-          deleteContact.pending
+          addContact.fulfilled,
+          deleteContact.fulfilled
         ),
         handleFulfiled
       );
